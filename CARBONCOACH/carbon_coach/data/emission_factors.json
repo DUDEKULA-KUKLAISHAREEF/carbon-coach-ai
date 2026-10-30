@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "version": "2026.1",
+    "updated": "2026-10-30",
+    "description": "Standard GHG emission factors catalog for personal, household, and campus carbon accounting.",
+    "references": [
+      "UK Department for Environment, Food & Rural Affairs (DEFRA) 2023 Greenhouse Gas Reporting: Conversion Factors",
+      "Central Electricity Authority (CEA) of India, CO2 Baseline Database for the Indian Power Sector, Version 19, 2023",
+      "US Environmental Protection Agency (EPA) GHG Emission Factors Hub (2023)",
+      "Poore, J., & Nemecek, T. (2018). Reducing food’s environmental impacts through producers and consumers. Science, 360(6392), 987-992",
+      "TERI (The Energy and Resources Institute) Urban Mobility Baseline Studies"
+    ]
+  },
+  "travel": {
+    "bus": { "factor_kg_per_km": 0.1023, "unit": "kg CO2e / pkm", "source": "DEFRA 2023 Local Bus / TERI avg" },
+    "car_petrol": { "factor_kg_per_km": 0.1705, "unit": "kg CO2e / km", "source": "DEFRA 2023 Medium Petrol Car" },
+    "car_diesel": { "factor_kg_per_km": 0.1680, "unit": "kg CO2e / km", "source": "DEFRA 2023 Medium Diesel Car" },
+    "car_ev": { "factor_kg_per_km": 0.0470, "unit": "kg CO2e / km", "source": "Grid-charged BEV average" },
+    "two_wheeler_petrol": { "factor_kg_per_km": 0.0840, "unit": "kg CO2e / km", "source": "DEFRA 2023 Motorcycle avg / ARAI" },
+    "two_wheeler_electric": { "factor_kg_per_km": 0.0180, "unit": "kg CO2e / km", "source": "EV 2-wheeler CEA grid powered" },
+    "train_metro": { "factor_kg_per_km": 0.0350, "unit": "kg CO2e / pkm", "source": "DMRC / Urban Metro avg" },
+    "auto_rickshaw": { "factor_kg_per_km": 0.0620, "unit": "kg CO2e / pkm", "source": "TERI CNG Auto-rickshaw" },
+    "bicycle": { "factor_kg_per_km": 0.0, "unit": "kg CO2e / km", "source": "Zero tailpipe emission" },
+    "walking": { "factor_kg_per_km": 0.0, "unit": "kg CO2e / km", "source": "Zero tailpipe emission" },
+    "flight_economy": { "factor_kg_per_km": 0.2458, "unit": "kg CO2e / pkm", "source": "DEFRA 2023 Domestic Flight with RF" }
+  },
+  "electricity": {
+    "grid_factors_kg_per_kwh": {
+      "india": 0.8200,
+      "us": 0.3860,
+      "global": 0.4750
+    },
+    "default_region": "india",
+    "appliances_power_kw": {
+      "ac": 1.5,
+      "air_conditioner": 1.5,
+      "fan": 0.075,
+      "ceiling_fan": 0.075,
+      "refrigerator": 0.15,
+      "fridge": 0.15,
+      "laptop": 0.065,
+      "desktop_pc": 0.20,
+      "computer": 0.18,
+      "tv": 0.10,
+      "television": 0.10,
+      "geyser": 2.0,
+      "water_heater": 2.0,
+      "microwave": 1.2,
+      "washing_machine": 0.5,
+      "led_bulb": 0.01,
+      "room_heater": 1.8
+    }
+  },
+  "food": {
+    "vegan_meal": { "factor_kg_per_serving": 0.70, "source": "Poore & Nemecek Science 2018" },
+    "vegetarian_meal": { "factor_kg_per_serving": 1.20, "source": "Poore & Nemecek Science 2018 (dal, rice, seasonal veggies)" },
+    "dairy_rich_vegetarian": { "factor_kg_per_serving": 1.90, "source": "Vegetarian meal with paneer/cheese/butter" },
+    "chicken_poultry": { "factor_kg_per_serving": 2.80, "source": "DEFRA / Poore & Nemecek" },
+    "fish_seafood": { "factor_kg_per_serving": 2.40, "source": "DEFRA / Poore & Nemecek" },
+    "mutton_beef": { "factor_kg_per_serving": 6.50, "source": "Poore & Nemecek Science 2018 (high methane ruminant)" },
+    "fast_food": { "factor_kg_per_serving": 3.20, "source": "Average burger/pizza meal combo" }
+  },
+  "waste": {
+    "food_organic_landfill": { "factor_kg_per_kg": 1.25, "source": "EPA WARM Anaerobic methane decomposition" },
+    "food_composted": { "factor_kg_per_kg": 0.15, "source": "Aerobic composting emission offset" },
+    "plastic_landfilled": { "factor_kg_per_kg": 1.43, "source": "EPA WARM plastics" },
+    "plastic_recycled": { "factor_kg_per_kg": 0.22, "source": "Offset through mechanical recycling" },
+    "paper_waste": { "factor_kg_per_kg": 0.95, "source": "EPA WARM paper decomposition" }
+  },
+  "benchmarks": {
+    "daily_student_target_kg": 3.5,
+    "daily_indian_urban_avg_kg": 4.8,
+    "daily_global_avg_kg": 12.8,
+    "daily_us_avg_kg": 38.0
+  }
+}
